@@ -32,13 +32,6 @@ public class PredictionController : ControllerBase
         .OrderBy(w => Math.Abs(EF.Functions.DateDiffSecond(w.Timestamp, targetTime)))
         .FirstOrDefaultAsync();
 
-
-
-        /*await _context.WeatherData
-        .Where(w => w.IsForecast == false)
-        .OrderBy(w => Math.Abs((w.Timestamp - targetTime).TotalSeconds))
-        .FirstOrDefaultAsync();*/
-
         // 3. Формуємо JSON для Python
         var payload = new
         {
