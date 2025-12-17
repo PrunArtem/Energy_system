@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Передбачення генерації</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        pre {
+            background: #eee;
+            padding: 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Поточна дата та час</h2>
+
+    <form id="predictForm">
+        <label for="timestamp">Оберіть дату та час:</label><br>
+        <input type="datetime-local" id="timestamp" name="timestamp" required><br><br>
+
+        <button type="submit">Запустити прогноз</button>
+    </form>
+
+    <h2>Передбачення генерації енергії</h2>
+
+    <pre id="output">Тут буде результат...</pre>
+
+    <!--    <script>
+        async function runPrediction() {
+            document.getElementById("output").textContent = "Виконується...";
+
+            document.getElementById("predictForm").addEventListener("submit", async function (e) {
+                e.preventDefault();
+
+                const ts = document.getElementById("timestamp").value;
+
+                console.log("Timestamp in JS:");
+                console.log(ts);
+
+                const response = await fetch(`/api/prediction/run?timestamp=${encodeURIComponent(ts)}`, {
+                    method: 'POST'
+                });
+
+                const text = await response.text();
+                document.getElementById("output").textContent = text;
+            });
+
+
+        }
+    </script> -->
+
+    <script>
+        document.getElementById("predictForm").addEventListener("submit", async function (e) {
+            e.preventDefault();
+
+            document.getElementById("output").textContent = "Виконується...";
+
+            const ts = document.getElementById("timestamp").value;
+
+            console.log("Timestamp in JS:");
+            console.log(ts);
+
+            const response = await fetch(`/api/prediction/run?timestamp=${encodeURIComponent(ts)}`, {
+                method: "POST"
+            });
+            const data = await response.json();
+
+            document.getElementById("output").innerHTML =
+                `<p>Результат: ${JSON.stringify(data)}</p>`;
+        });
+    </script>
+
+</body>
+
+</html>
