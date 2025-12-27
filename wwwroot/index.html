@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Система управління ВДЕ</title>
+    <style>
+        #uaTime {
+            color: #9ca3af;
+            font-size: 14px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 12px;
+        }
+
+        .nav-link {
+            color: #9ca3af;
+            text-decoration: none;
+            padding: 6px 10px;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        .nav-link:hover {
+            background: #1f2937;
+            color: white;
+        }
+
+        .nav-link.active {
+            background: #2563eb;
+            color: white;
+        }
+
+        body {
+            margin: 0;
+            background: #0f172a;
+            color: white;
+            font-family: Segoe UI, Roboto, sans-serif;
+        }
+
+        header {
+            background: #020617;
+            padding: 15px 25px;
+            border-bottom: 1px solid #1f2937;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .title {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .container {
+            padding: 25px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: #111827;
+            padding: 18px;
+            border-radius: 14px;
+            border: 1px solid #1f2937;
+        }
+
+        .card h2 {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+        }
+
+        .value {
+            font-size: 32px;
+            font-weight: bold;
+            margin-top: 8px;
+        }
+
+        .good {
+            color: #4ade80;
+        }
+
+        .warn {
+            color: #facc15;
+        }
+
+        .bad {
+            color: #f87171;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            font-size: 12px;
+            color: #9ca3af;
+            margin-top: 10px;
+        }
+
+        button {
+            background: #2563eb;
+            border: none;
+            color: white;
+            padding: 8px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        .forecast-box {
+            height: 160px;
+            background: #0b1220;
+            border-radius: 10px;
+            border: 1px dashed #334155;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6b7280;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="title">Автоматизована система управління ВДЕ</div>
+
+    <nav class="nav">
+        <a href="index.html" class="nav-link active">Головна</a>
+        <a href="forecast.html" class="nav-link">Прогнози</a>
+        <a href="history.html" class="nav-link">Попередні дані</a>
+        <a href="settings.html" class="nav-link">Налаштування</a>
+
+        <button id="refreshForecastBtn">Оновити прогнози</button>
+    </nav>
+
+    <!-- !!! тут відображається симуляційний час -->
+    <div style="font-size:18px">
+        <span id="systemTime">--.--.--, --:--:--</span>
+    </div>
+</header>
+
+
+<div class="container">
+
+    <!-- 🌞 Сонячна генерація -->
+    <div class="card">
+        <h2>Поточна генерація — Сонячні панелі</h2>
+        <div class="value good" id="solarPower">0.00 kW</div>
+        <div id="solarStatus">—</div>
+    </div>
+
+    <!-- 💨 Вітрова генерація -->
+    <div class="card">
+        <h2>Поточна генерація — Вітрові турбіни</h2>
+        <div class="value good" id="windPower">0.00 kW</div>
+        <div id="windStatus">—</div>
+    </div>
+
+    <!-- 🌦️ Поточна погода (з БД) -->
+    <div class="card">
+        <h2>Поточна погода</h2>
+        <div class="value" id="weatherTemp">-- °C</div>
+        <div id="weatherInfo">Хмарність: — | Вітер: —</div>
+    </div>
+
+    <!-- ⚙️ Статус -->
+    <div class="card">
+        <h2>Статус системи</h2>
+        <div id="systemStatus">—</div>
+        <h2></h2>
+        <h2>Стан системи</h2>
+        <div id="systemState">—</div>
+    </div>
+
+
+
+    <div class="card">
+    <h2>Поточний заряд батареї</h2>
+    <div class="value" id="batteryCharge">--%</div>
+    </div>
+
+    <div class="card">
+    <h2>Стабілізаційний / аварійний режим</h2>
+    <div id="stabilizationStatus">Зараз вимкнено</div>
+    <button id="toggleModeBtn">Перемкнути режим</button>
+</div>
+
+</div>
+
+
+<footer>
+    Демонстраційна система управління відновлюваними джерелами енергії
+</footer>
+
+    <script>
+let simulationTime = null;
+
+// ================== SIM CLOCK ==================
+async function initSimulationTime() {
+    const res = await fetch("/api/forecast/time");
+    const timeStr = await res.json();
+    simulationTime = new Date(timeStr);
+
+    setInterval(() => {
+        simulationTime.setSeconds(simulationTime.getSeconds() + 1);
+        document.getElementById("systemTime").textContent =
+            simulationTime.toLocaleString("uk-UA", {
+                year: "numeric",
+                month: "2-digit",
+                day: "2-digit",
+                hour: "2-digit",
+                minute: "2-digit",
+                second: "2-digit"
+            });
+    }, 1000);
+
+    // Після отримання часу — оновлюємо UI
+    loadDashboardData();
+}
+
+initSimulationTime();
+
+async function loadDashboardData() {
+    if (!simulationTime) return;
+
+    const iso = simulationTime.toISOString();
+
+    await Promise.all([
+        loadWeather(iso),
+        loadGeneration(iso),
+        loadConsumption(iso),
+        loadDecison(iso)
+    ]);
+}
+
+
+// ================== WEATHER ==================
+async function loadWeather(timeIso) {
+    try {
+        const res = await fetch(`/api/weatherdata`);
+        const all = await res.json();
+
+        const closest = findClosestByTime(all, "timestamp", simulationTime);
+
+        if (!closest) {
+            document.getElementById("weatherInfo").textContent = "Немає даних";
+            return;
+        }
+
+        document.getElementById("weatherTemp").textContent =
+            `${closest.temperature.toFixed(1)} °C`;
+
+        document.getElementById("weatherInfo").textContent =
+            `Хмарність: ${closest.cloudiness + 7}%
+            Вітер: ${closest.windSpeed}; 
+            м/с, Напрям відносно півночі: ${closest.windDirection}
+            Опади: ${closest.precipitation}; 
+            Відносна вологість: ${closest.humidity}; 
+            Атмосферний тиск: ${closest.pressure}`;
+
+    } catch (e) {
+        console.error(e);
+        document.getElementById("weatherInfo").textContent =
+            "Не вдалося отримати дані";
+    }
+}
+
+
+
+// ================== GENERATION ==================
+async function loadGeneration(timeIso) {
+    try {
+        const res = await fetch(`/api/forecast`);
+        const all = await res.json();
+
+        const lastHour = filterLastHour(all, "timestamp", simulationTime);
+
+        let solar = 0;
+        let wind = 0;
+
+lastHour.forEach(x => {
+    if (x.forecastType === "Solar") {
+        solar += x.value || 0;
+    }
+
+    if (x.forecastType === "Wind") {
+        wind += x.value || 0;
+    }
+});
+        document.getElementById("solarPower").textContent =
+            `${solar.toFixed(2)} Wh`;
+
+        document.getElementById("windPower").textContent =
+            `${wind.toFixed(2)} Wh`;
+
+        document.getElementById("solarStatus").textContent =
+            solar > 0.3 ? "Стабільна генерація" : "Слабке сонце";
+
+        document.getElementById("windStatus").textContent =
+            wind > 0.3 ? "Добрий вітер" : "Слабкий вітер";
+
+    } catch (e) {
+        console.error(e);
+    }
+}
+
+
+
+// ================== CONSUMPTION ==================
+async function loadConsumption(timeIso) {
+    try {
+        const res = await fetch(`/api/consumption`);
+        const all = await res.json();
+
+        const lastHour = filterLastHour(all, "timestamp", simulationTime);
+
+        console.log(lastHour);
+
+        let total = 0;
+        lastHour.forEach(x => total += x.demandKWh || 0);
+
+        document.getElementById("systemStatus").textContent =
+            `Споживання минулої години: ${total.toFixed(2)} kW`;
+
+    } catch (e) {
+        console.error(e);
+        document.getElementById("systemStatus").textContent =
+            "Немає даних про споживання";
+    }
+}
+
+
+
+// ================== REFRESH BUTTON ==================
+document.getElementById("refreshForecastBtn").addEventListener("click", async () => {
+    try {
+        const res = await fetch("/api/settings/refresh", { method: "POST" });
+
+        if (!res.ok) throw new Error("Помилка запиту");
+
+        const text = await res.text();
+        alert("Успіх\n" + text);
+
+        // оновимо сторінку після оновлення прогнозів
+        loadDashboardData();
+
+    } catch (e) {
+        alert("Не вдалося оновити прогнози");
+        console.error(e);
+    }
+});
+
+function parseDate(d) {
+    return new Date(d);
+}
+
+// Найближчий запис до моменту часу
+function findClosestByTime(arr, timeField, targetTime) {
+    let best = null;
+    let bestDiff = Infinity;
+
+    arr.forEach(x => {
+        const t = parseDate(x[timeField]);
+        const diff = Math.abs(t - targetTime);
+
+        if (diff < bestDiff) {
+            bestDiff = diff;
+            best = x;
+        }
+    });
+    return best;
+}
+
+// Записи за останню годину
+function filterLastHour(arr, timeField, targetTime) { 
+    const from = new Date(Math.ceil((targetTime.getTime() - 60 * 60 * 1000 * 2) / 3600000) * 3600000);
+    return arr.filter(x => {
+        const t = parseDate(x[timeField]);
+        return t > from && t <= targetTime;
+    });
+}
+    
+    
+async function loadBattery() {
+    try {
+        const res = await fetch("/api/settings/battery");
+        if (!res.ok) throw new Error("Не вдалося завантажити заряд");
+        const value = await res.text();
+        document.getElementById("batteryCharge").textContent = value + "%";
+    } catch (e) {
+        console.error(e);
+    }
+}
+
+async function loadMode() {
+    try {
+        const res = await fetch("/api/settings/mode");
+        if (!res.ok) throw new Error("Не вдалося завантажити режим");
+        const mode = await res.text();
+        document.getElementById("stabilizationStatus").textContent = 
+            mode === "1" ? "Увімкнено" : "Вимкнено";
+    } catch (e) {
+        console.error(e);
+    }
+}
+
+async function toggleMode() {
+    try {
+        const current = document.getElementById("stabilizationStatus").textContent;
+        const newMode = current === "Увімкнено" ? 0 : 1;
+        const res = await fetch(`/api/settings/mode/${newMode}`, { method: "POST" });
+        if (!res.ok) throw new Error("Не вдалося змінити режим");
+        const updated = await res.text();
+        document.getElementById("stabilizationStatus").textContent = 
+            updated === "1" ? "Увімкнено" : "Вимкнено";
+    } catch (e) {
+        console.error(e);
+        alert("Помилка зміни режиму");
+    }
+}
+
+// прив'язка кнопок
+document.getElementById("toggleModeBtn").addEventListener("click", toggleMode);
+
+async function loadDecison(timeIso) {
+    try {
+        const res = await fetch(`/api/decision`);
+        const all = await res.json();
+
+        const closest = findClosestByTime(all, "timestamp", simulationTime);
+
+        if (!closest) {
+            document.getElementById("systemState").textContent = "Немає даних";
+            return;
+        }
+
+        document.getElementById("systemState").textContent =
+            `${closest.decisionText}`;
+
+                    console.log("aaa");
+        console.log(closest.decisionText);
+
+    } catch (e) {
+        console.error(e);
+    }
+}
+
+// завантаження початкових значень
+loadBattery();
+loadMode();
+    </script>
+
+</body>
+
+</html>

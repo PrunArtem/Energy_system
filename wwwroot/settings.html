@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Налаштування системи</title>
+
+    <style>
+        #uaTime {
+            color: #9ca3af;
+            font-size: 14px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 12px;
+        }
+
+        .nav-link {
+            color: #9ca3af;
+            text-decoration: none;
+            padding: 6px 10px;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        .nav-link:hover {
+            background: #1f2937;
+            color: white;
+        }
+
+        .nav-link.active {
+            background: #2563eb;
+            color: white;
+        }
+
+        body {
+            margin: 0;
+            background: #0f172a;
+            color: white;
+            font-family: Segoe UI, Roboto, sans-serif;
+        }
+
+        header {
+            background: #020617;
+            padding: 15px 25px;
+            border-bottom: 1px solid #1f2937;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .container {
+            padding: 25px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .card {
+            background: #111827;
+            padding: 18px;
+            border-radius: 14px;
+            border: 1px solid #1f2937;
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 18px;
+        }
+
+        input,
+        select {
+            padding: 8px;
+            border-radius: 8px;
+            border: none;
+            width: 100%;
+            background: #0b1220;
+            color: white;
+        }
+
+        button {
+            background: #2563eb;
+            border: none;
+            color: white;
+            padding: 8px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        .title {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="title">Автоматизована система управління ВДЕ</div>
+
+        <nav class="nav">
+            <a href="index.html" class="nav-link">Головна</a>
+            <a href="forecast.html" class="nav-link">Прогнози</a>
+            <a href="history.html" class="nav-link">Попередні дані</a>
+            <a href="settings.html" class="nav-link active">Налаштування</a>
+            <button id="refreshForecastBtn">Оновити прогнози</button>
+        </nav>
+
+        <div style="font-size:18px">
+            <span id="systemTime">30.05.2020, 12:00:00</span>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- Час системи -->
+        <div class="card">
+            <h2>Керування часом</h2>
+            <label>Змінити поточний час:</label>
+            <input type="text" id="nextRun">
+
+            <button onclick="saveTime()">Зберегти</button>
+
+            <div id="timeStatus"></div>
+
+            <h2>____________________________________________________________________________________________________
+            </h2>
+            <h2> Критичний рівень заряду акумулятора </h2>
+
+            <div class="card-body">
+                <div class="mb-3">
+                    <label class="form-label">Критичний рівень (%)</label>
+                    <input id="batteryCriticalInput" type="number" class="form-control" min="1" max="100"
+                        placeholder="Введіть значення">
+                </div>
+
+                <button class="btn btn-primary" onclick="saveBatteryCritical()">Зберегти</button>
+
+                <p class="mt-2 text-muted" id="batteryStatusText"></p>
+            </div>
+
+            <h2>____________________________________________________________________________________________________
+            </h2>
+
+            <div class="card">
+                <h2>Поточний заряд батареї</h2>
+                <div class="value" id="batteryCharge">--%</div>
+                <input type="range" id="batterySlider" min="0" max="100" value="50">
+                <button id="updateBatteryBtn">Оновити заряд</button>
+            </div>
+
+        </div>
+
+
+        <!-- Пристрої -->
+        <div class="card">
+            <h2>Пристрої системи</h2>
+
+            <label>Тип пристрою</label>
+            <select id="deviceType">
+                <option value="solar">Сонячна панель</option>
+                <option value="wind">Вітрова турбіна</option>
+                <option value="battery">Акумулятор</option>
+            </select>
+
+            <label>Назва пристрою</label>
+            <input id="deviceName" placeholder="Назва">
+
+            <label>Потужність / Ємність (кВт)</label>
+            <input id="devicePower" type="number" step="0.1">
+
+            <button onclick="addDevice()">Додати пристрій</button>
+
+            <h3>Наявні пристрої</h3>
+            <ul id="deviceList"></ul>
+
+        </div>
+
+    </div>
+
+    <script>
+        let simulationTime = null;
+
+        async function initSimulationTime() {
+            const res = await fetch("/api/forecast/time");
+            const timeStr = await res.json();
+            simulationTime = new Date(timeStr);
+
+            // запуск лічильника
+            setInterval(() => {
+                simulationTime.setSeconds(simulationTime.getSeconds() + 1);
+                document.getElementById("systemTime").textContent =
+                    simulationTime.toLocaleString("uk-UA", {
+                        year: "numeric",
+                        month: "2-digit",
+                        day: "2-digit",
+                        hour: "2-digit",
+                        minute: "2-digit",
+                        second: "2-digit"
+                    });
+            }, 1000);
+        }
+
+        initSimulationTime();
+
+        async function saveTime() {
+            const input = document.getElementById("nextRun").value.trim(); // "30.05.2020 13:00:00"
+            if (!input) return;
+
+            // Розбираємо рядок у Date
+            const parts = input.split(/[\s.:]/); // ["30","05","2020","13","00","00"]
+            if (parts.length !== 6) {
+                document.getElementById("timeStatus").textContent = "Неправильний формат";
+                return;
+            }
+
+            const [day, month, year, hour, minute, second] = parts.map(x => parseInt(x));
+            const date = new Date(year, month - 1, day, hour, minute, second);
+
+            if (isNaN(date)) {
+                document.getElementById("timeStatus").textContent = "Неправильна дата";
+                return;
+            }
+
+            // Перетворюємо на ISO для збереження у БД
+            const isoString = date.toISOString();
+
+            const setting = {
+                KeyName: "SimulationStartTime",
+                Value: isoString
+            };
+
+            try {
+                const response = await fetch("/api/settings", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(setting)
+                });
+
+                const rsp = await fetch("/api/forecast/set-time", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(isoString)
+                });
+
+                if (!response.ok) throw new Error("Помилка при збереженні");
+
+                document.getElementById("timeStatus").textContent = "Час успішно збережено";
+            } catch (e) {
+                document.getElementById("timeStatus").textContent = "Помилка збереження";
+            }
+        }
+
+        // ---- Додавання пристрою ---- //
+        const apiBase = "/api/Device"; //
+
+        // ---------- Завантаження списку ----------
+        function loadDevices() {
+            fetch(apiBase)
+                .then(r => r.json())
+                .then(devices => {
+                    const list = document.getElementById("deviceList");
+                    list.innerHTML = "";
+
+                    devices.filter(d => d.deviceTypeId <= 3).forEach(d => {
+                        const li = document.createElement("li");
+
+                        li.innerHTML = `
+                    <span>
+                        <b>${d.name}</b>
+                        (тип: ${d.deviceTypeId}, ${d.ratedPower ?? 0} кВт)
+                    </span>
+                    <button onclick="deleteDevice(${d.id})"
+                            style="margin-left:10px;background:#dc2626;">
+                        Видалити
+                    </button>
+                `;
+
+                        list.appendChild(li);
+                    });
+                });
+        }
+
+        // ---------- Додавання ----------
+        function addDevice() {
+            const type = document.getElementById("deviceType").value;
+            const name = document.getElementById("deviceName").value;
+            const power = parseFloat(document.getElementById("devicePower").value);
+
+            if (!name || isNaN(power)) {
+                alert("Введіть назву та потужність!");
+                return;
+            }
+
+            const deviceTypeMap = {
+                "solar": 1,
+                "wind": 2,
+                "battery": 3
+            };
+
+            fetch(apiBase, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    deviceTypeId: deviceTypeMap[type],
+                    name: name,
+                    location: "",
+                    ratedPower: power
+                })
+            })
+                .then(r => {
+                    if (!r.ok) throw new Error("Помилка додавання");
+                    return r.json();
+                })
+                .then(() => {
+                    document.getElementById("deviceName").value = "";
+                    document.getElementById("devicePower").value = "";
+                    loadDevices();
+                })
+                .catch(err => alert(err.message));
+        }
+
+        // ---------- Видалення ----------
+        function deleteDevice(id) {
+            if (!confirm("Видалити пристрій?")) return;
+
+            fetch(`${apiBase}/${id}`, { method: "DELETE" })
+                .then(r => {
+                    if (!r.ok) throw new Error("Не вдалося видалити");
+                    loadDevices();
+                })
+                .catch(err => alert(err.message));
+        }
+
+        const apiUrl = "/api/settings/BatteryCriticalLevel";
+
+        document.addEventListener("DOMContentLoaded", loadBatteryLevel);
+
+        async function loadBatteryLevel() {
+            try {
+                const res = await fetch(apiUrl);
+
+                if (!res.ok) {
+                    document.getElementById("batteryStatusText").innerText =
+                        "Поки що значення не встановлено";
+                    return;
+                }
+
+                const value = await res.text();
+                document.getElementById("batteryCriticalInput").value = value;
+                document.getElementById("batteryStatusText").innerText =
+                    "Поточне значення: " + value + "%";
+            } catch {
+                document.getElementById("batteryStatusText").innerText =
+                    "Помилка завантаження налаштування";
+            }
+        }
+
+        async function saveBatteryCritical() {
+            const val = document.getElementById("batteryCriticalInput").value;
+
+            if (val < 1 || val > 100) {
+                alert("Значення має бути від 1 до 100%");
+                return;
+            }
+
+            const body = {
+                keyName: "BatteryCriticalLevel",
+                value: val.toString()
+            };
+
+            const res = await fetch("/api/settings", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(body)
+            });
+
+            if (res.ok) {
+                document.getElementById("batteryStatusText").innerText =
+                    "Збережено: " + val + "%";
+            } else {
+                alert("Помилка збереження");
+            }
+        }
+
+        // ---------- Автозавантаження при відкритті ----------
+        loadDevices();
+
+        document.getElementById("refreshForecastBtn").addEventListener("click", async () => {
+            try {
+                const res = await fetch("/api/settings/refresh", {
+                    method: "POST"
+                });
+
+                if (!res.ok) throw new Error("Помилка запиту");
+
+                const text = await res.text();
+                alert("Успіх \n" + text);
+            } catch (e) {
+                alert("Не вдалося оновити прогнози");
+                console.error(e);
+            }
+        });
+
+        async function updateBattery() {
+            const value = document.getElementById("batterySlider").value;
+            try {
+                const res = await fetch(`/api/settings/battery/${value}`, { method: "POST" });
+                if (!res.ok) throw new Error("Не вдалося оновити заряд");
+                const updated = await res.text();
+                document.getElementById("batteryCharge").textContent = updated + "%";
+                alert("Заряд батареї оновлено!");
+            } catch (e) {
+                console.error(e);
+                alert("Помилка оновлення заряду");
+            }
+        }
+        document.getElementById("updateBatteryBtn").addEventListener("click", updateBattery);
+
+        async function loadBattery() {
+    try {
+        const res = await fetch("/api/settings/battery");
+        if (!res.ok) throw new Error("Не вдалося завантажити заряд");
+        const value = await res.text();
+        document.getElementById("batteryCharge").textContent = value + "%";
+        document.getElementById("batterySlider").value = value;
+    } catch (e) {
+        console.error(e);
+    }
+}
+    </script>
+</body>
+
+</html>

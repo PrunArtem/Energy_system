@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Прогнози споживання</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            margin: 0;
+            background: #0f172a;
+            color: white;
+            font-family: Segoe UI, Roboto, sans-serif;
+        }
+
+        header {
+            background: #020617;
+            padding: 15px 25px;
+            border-bottom: 1px solid #1f2937;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .title {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 12px;
+        }
+
+        .nav-link {
+            color: #9ca3af;
+            text-decoration: none;
+            padding: 6px 10px;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        .nav-link:hover {
+            background: #1f2937;
+            color: white;
+        }
+
+        .nav-link.active {
+            background: #2563eb;
+            color: white;
+        }
+
+        .container {
+            padding: 25px;
+        }
+
+        .chart-card {
+            background: #111827;
+            padding: 18px;
+            border-radius: 14px;
+            border: 1px solid #1f2937;
+            margin-bottom: 20px;
+        }
+                button {
+            background: #2563eb;
+            border: none;
+            color: white;
+            padding: 8px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="title">Автоматизована система управління ВДЕ</div>
+        <nav class="nav">
+            <a href="index.html" class="nav-link">Головна</a>
+            <a href="forecast.html" class="nav-link active">Прогнози</a>
+            <a href="history.html" class="nav-link">Попередні дані</a>
+            <a href="settings.html" class="nav-link">Налаштування</a>
+            <button id="refreshForecastBtn">Оновити прогнози</button>
+        </nav>
+        <div style="font-size:18px">
+            <span id="systemTime">30.05.2020, 12:00:00</span>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="chart-card"
+            style="display: flex; flex-direction: column; justify-content: center; align-items: center; width:800; height: 550px;">
+            <h2>Споживання електроенергії (kWh)</h2>
+            <canvas id="consumptionChart" width="800" height="450"></canvas>
+        </div>
+        <div class="container">
+            <div class="chart-card"
+                style="display: flex; flex-direction: column; justify-content: center; align-items: center; width:800; height: 550px;">
+                <h2>Генерація електроенергії (kWh)</h2>
+                <canvas id="genChart" width="800" height="450"></canvas>
+            </div>
+        </div>
+
+        <script>
+            let simulationTime = null;
+
+            async function initSimulationTime() {
+                const res = await fetch("/api/forecast/time");
+                const timeStr = await res.json();
+                simulationTime = new Date(timeStr);
+
+                setInterval(() => {
+                    simulationTime.setSeconds(simulationTime.getSeconds() + 1);
+                    document.getElementById("systemTime").textContent =
+                        simulationTime.toLocaleString("uk-UA", {
+                            year: "numeric",
+                            month: "2-digit",
+                            day: "2-digit",
+                            hour: "2-digit",
+                            minute: "2-digit",
+                            second: "2-digit"
+                        });
+                }, 1000);
+            }
+
+            async function loadGenerationData() {
+                const res = await fetch("/api/forecast"); // твій API
+                const data = await res.json();
+
+                const parsedData = data.map(d => {
+                    const dt = new Date(d.timestamp); // d.timestamp з API
+                    dt.setMinutes(0, 0, 0);            // округлюємо до початку години
+                    return { ...d, Timestamp: dt };
+                });
+
+                // Беремо 12 записів від поточної години
+                const simHour = new Date(Math.ceil(simulationTime / 3600000) * 3600000);
+                simHour.setMinutes(0, 0, 0);
+
+                const next12solar = parsedData
+                    .filter(d => d.Timestamp >= simHour && d.forecastType === 'Solar')
+                    .sort((a, b) => a.Timestamp - b.Timestamp)
+                    .slice(0, 12);
+
+                const valuesS = next12solar.map(d => d.value / 1000);
+
+                const labelsS = next12solar.map(d => {
+                    const ts = d.Timestamp;
+                    return ts.getHours().toString().padStart(2, '0') + ':' +
+                        ts.getMinutes().toString().padStart(2, '0');
+                });
+
+                const next12wind = parsedData
+                    .filter(d => d.Timestamp >= simHour && d.forecastType === 'Wind')
+                    .sort((a, b) => a.Timestamp - b.Timestamp)
+                    .slice(0, 12);
+
+                const valuesW = next12wind.map(d => d.value / 1000);
+
+                const labelsW = next12wind.map(d => {
+                    const ts = d.Timestamp;
+                    return ts.getHours().toString().padStart(2, '0') + ':' +
+                        ts.getMinutes().toString().padStart(2, '0');
+                });
+
+
+                const ctx = document.getElementById('genChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: labelsW,
+                        datasets: [{
+                            label: 'сонячна генерація',
+                            data: valuesS,
+                            borderColor: 'yellow',
+                            backgroundColor: 'rgba(74, 222, 128,0.2)',
+                            fill: false,
+                            tension: 0.2
+                        },
+                        {
+                            label: 'вітрова генерація',
+                            data: valuesW,
+                            borderColor: 'skyblue',
+                            backgroundColor: 'rgba(74, 222, 128,0.2)',
+                            fill: false,
+                            tension: 0.2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            x: {
+                                ticks: { color: '#9ca3af' },
+                                grid: { color: '#1f2937' }
+                            },
+                            y: {
+                                ticks: { color: '#9ca3af' },
+                                grid: { color: '#1f2937' }
+                            }
+                        },
+                        plugins: {
+                            legend: { labels: { color: '#9ca3af' } }
+                        }
+                    }
+                });
+            }
+
+            async function loadConsumptionData() {
+                const res = await fetch("/api/consumption"); // твій API
+                const data = await res.json();
+
+                const parsedData = data.map(d => {
+                    const dt = new Date(d.timestamp); // d.timestamp з API
+                    dt.setMinutes(0, 0, 0);            // округлюємо до початку години
+                    return { ...d, Timestamp: dt };
+                });
+
+
+                // Беремо 12 записів від поточної години
+                const simHour = new Date(Math.ceil(simulationTime / 3600000) * 3600000);
+                simHour.setMinutes(0, 0, 0);
+
+
+
+                const next12 = parsedData
+                    .filter(d => d.Timestamp >= simHour)
+                    .sort((a, b) => a.Timestamp - b.Timestamp)
+                    .slice(0, 12);
+
+
+                const values = next12.map(d => d.demandKWh);
+
+                const labels = next12.map(d => {
+                    const ts = d.Timestamp;
+                    return ts.getHours().toString().padStart(2, '0') + ':' +
+                        ts.getMinutes().toString().padStart(2, '0');
+                });
+
+
+
+
+                const sw = await fetch("/api/forecast"); // твій API
+                const swd = await sw.json();
+
+                const pswd = swd.map(d => {
+                    const dt = new Date(d.timestamp); // d.timestamp з API
+                    dt.setMinutes(0, 0, 0);            // округлюємо до початку години
+                    return { ...d, Timestamp: dt };
+                });
+
+                const next12solar = pswd
+                    .filter(d => d.Timestamp >= simHour && d.forecastType === 'Solar')
+                    .sort((a, b) => a.Timestamp - b.Timestamp)
+                    .slice(0, 12);
+
+                const valuesS = next12solar.map(d => d.value / 1000);
+
+                const labelsS = next12solar.map(d => {
+                    const ts = d.Timestamp;
+                    return ts.getHours().toString().padStart(2, '0') + ':' +
+                        ts.getMinutes().toString().padStart(2, '0');
+                });
+
+                const next12wind = pswd
+                    .filter(d => d.Timestamp >= simHour && d.forecastType === 'Wind')
+                    .sort((a, b) => a.Timestamp - b.Timestamp)
+                    .slice(0, 12);
+
+                const valuesW = next12wind.map(d => d.value / 1000);
+
+                const labelsW = next12wind.map(d => {
+                    const ts = d.Timestamp;
+                    return ts.getHours().toString().padStart(2, '0') + ':' +
+                        ts.getMinutes().toString().padStart(2, '0');
+                });
+
+                const valuesSum = valuesS.map((v, i) => v + (valuesW[i] || 0));
+
+                const ctx = document.getElementById('consumptionChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Споживання (kWh)',
+                            data: values,
+                            borderColor: 'orange',
+                            backgroundColor: 'rgba(222, 150, 60,0.1)',
+                            fill: true,
+                            tension: 0.2
+                        },
+                        {
+                            label: 'Сумарна генерація',
+                            data: valuesSum,
+                            borderColor: 'green',
+                            borderDash: [5, 5], // зробити пунктирну лінію для наочності
+                            fill: false
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            x: {
+                                ticks: { color: '#9ca3af' },
+                                grid: { color: '#1f2937' }
+                            },
+                            y: {
+                                ticks: { color: '#9ca3af' },
+                                grid: { color: '#1f2937' }
+                            }
+                        },
+                        plugins: {
+                            legend: { labels: { color: '#9ca3af' } }
+                        }
+                    }
+                });
+            }
+
+            initSimulationTime();
+            loadConsumptionData();
+            loadGenerationData();
+
+            document.getElementById("refreshForecastBtn").addEventListener("click", async () => {
+                try {
+                    const res = await fetch("/api/settings/refresh", {
+                        method: "POST"
+                    });
+
+                    if (!res.ok) throw new Error("Помилка запиту");
+
+                    const text = await res.text();
+                    alert("Успіх \n" + text);
+                } catch (e) {
+                    alert("Не вдалося оновити прогнози");
+                    console.error(e);
+                }
+            });
+        </script>
+</body>
+
+</html>

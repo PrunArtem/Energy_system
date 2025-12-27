@@ -82,6 +82,38 @@ public class DeviceController : ControllerBase
         return NoContent();
     }
 
+    [HttpGet("time")]
+    public async Task<ActionResult<DateTime>> GetSystemTime()
+    {
+        var clock = await _context.Devices
+            .FirstOrDefaultAsync(d => d.Name == "Clock" || d.DeviceTypeId == 10);
+
+        if (clock == null)
+            return NotFound("Clock device not found");
+
+        return clock.CreatedAt;
+    }
+
+    public class TimeUpdateRequest
+    {
+        public DateTime NewTime { get; set; }
+    }
+
+    [HttpPost("time")]
+    public async Task<IActionResult> SetSystemTime(TimeUpdateRequest req)
+    {
+        var clock = await _context.Devices
+            .FirstOrDefaultAsync(d => d.Name == "Clock" || d.DeviceTypeId == 10);
+
+        if (clock == null)
+            return NotFound("Clock device not found");
+
+        clock.CreatedAt = req.NewTime;
+        await _context.SaveChangesAsync();
+
+        return Ok(clock.CreatedAt);
+    }
+
     private bool DeviceExists(int id)
     {
         return _context.Devices.Any(e => e.Id == id);

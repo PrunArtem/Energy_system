@@ -140,5 +140,9 @@ E:\EnergySystem\EnergySystemAPI\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Works
 E:\EnergySystem\EnergySystemAPI\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 E:\EnergySystem\EnergySystemAPI\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 E:\EnergySystem\EnergySystemAPI\bin\Debug\net9.0\EnergySystemAPI.staticwebassets.runtime.json
-E:\EnergySystem\EnergySystemAPI\obj\Debug\net9.0\compressed\qzg36l8eg0-5ipweew5fc.gz
 E:\EnergySystem\EnergySystemAPI\obj\Debug\net9.0\compressed\hl3gzjyy87-23embezgku.gz
+E:\EnergySystem\EnergySystemAPI\obj\Debug\net9.0\EnergySystemAPI.sourcelink.json
+E:\EnergySystem\EnergySystemAPI\obj\Debug\net9.0\compressed\nbxhp1ole9-5ppegayfgx.gz
+E:\EnergySystem\EnergySystemAPI\obj\Debug\net9.0\compressed\tof8wkjoh4-pz5hgm8nf6.gz
+E:\EnergySystem\EnergySystemAPI\obj\Debug\net9.0\compressed\t2cqfr2nds-dgn3xnvw15.gz
+E:\EnergySystem\EnergySystemAPI\obj\Debug\net9.0\compressed\qzg36l8eg0-nq4ua00oay.gz

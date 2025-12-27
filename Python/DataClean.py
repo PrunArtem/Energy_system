@@ -1,47 +1,46 @@
-import csv
-import mysql.connector
-from datetime import datetime
+import pandas as pd
+from sqlalchemy import create_engine
 
 # === 1. Підключення до MySQL ===
-db = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="32151",
-    database="energy_system",
-)
+DB_HOST ="localhost"
+DB_USER ="root"
+DB_PASS ="32151"
+DB_NAME ="energy_system"
 
-cursor = db.cursor()
+csv_path = "E:\\Code Files\\EVmodeling\\consumption\\data_hourly.csv"
 
-# === 2. Відкриваємо CSV ===
-with open("E:\\EnergySystem\\EnergySystemAPI\\Data\\weather_clean.csv", "r", encoding="utf-8") as file:
-    reader = csv.DictReader(file, delimiter=';')
+print("Loading CSV...")
+df = pd.read_csv(csv_path)
 
-    for row in reader:
-        # === 3. Перетворюємо дату у MySQL формат ===
-        ts = datetime.strptime(row["reference_timestamp"], "%d.%m.%Y %H:%M")
+df = df[df["ID"] == "Exp_43"]
 
-        # === 4. Читаємо дані ===
-        temperature = float(row["Air temperature 2 m above ground hourly mean"])
-        humidity = float(row["Relative air humidity 2 m above ground hourly mean"])
-        pressure = float(row["Atmospheric pressure at barometric altitude (QFE) hourly mean"])
-        wind_dir = float(row["Wind direction hourly mean"])
-        wind_speed = float(row["Wind speed scalar hourly mean in m/s"])   # Використовуємо m/s
-        precipitation = float(row["Precipitation hourly total"])
-        ghi = float(row["Global radiation hourly mean"])
+# only required columns
+df = df[['From', 'Demand_kWh']]
 
-        # === 5. Формуємо INSERT ===
-        cursor.execute("""
-            INSERT INTO weatherdata
-            (Timestamp, Temperature, Humidity, WindDirection, WindSpeed, Precipitation, Pressure,
-             GHI, Cloudiness, FeelsLike, IsForecast, CreatedAt)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, 0, 0, 0, NOW());
-        """, (
-            ts, temperature, humidity, wind_dir, wind_speed, precipitation, pressure,
-            ghi
-        ))
+# drop NA
+df = df.dropna(subset=['Demand_kWh'])
 
-db.commit()
-cursor.close()
-db.close()
+# convert time
+df['Timestamp'] = pd.to_datetime(df['From'], utc=True)
 
-print("Готово! Дані імпортовано.")
+# filter 2020–2021
+df = df[(df['Timestamp'].dt.year >= 2020) & (df['Timestamp'].dt.year <= 2021)]
+
+# rename
+df = df.rename(columns={'Demand_kWh': 'DemandKWh'})
+
+# add IsForecast
+df['IsForecast'] = False
+
+# final columns order
+df = df[['Timestamp', 'DemandKWh', 'IsForecast']]
+
+print(f"Records to insert: {len(df)}")
+
+print("Connecting to DB...")
+engine = create_engine(f"mysql+pymysql://{DB_USER}:{DB_PASS}@{DB_HOST}/{DB_NAME}")
+
+print("Writing to MySQL...")
+df.to_sql("consumption", engine, if_exists="append", index=False)
+
+print("Done 🎉")

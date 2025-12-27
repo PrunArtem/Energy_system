@@ -7,12 +7,31 @@ using EnergySystemAPI.Data;
 [ApiController]
 public class ForecastController : ControllerBase
 {
+    private readonly ISimulationClock _clock;
     private readonly AppDbContext _context;
 
-    public ForecastController(AppDbContext context)
+    public ForecastController(ISimulationClock clock, AppDbContext context)
     {
+        _clock = clock;
         _context = context;
     }
+
+    [HttpGet("time")]
+    public DateTime GetTime()
+    {
+        return _clock.Now;
+    }
+
+    [HttpPost("set-time")]
+public IActionResult SetSimulationTime([FromBody] string isoTime)
+{
+    if (!DateTime.TryParse(isoTime, out var newTime))
+        return BadRequest("Невірний формат дати");
+
+    _clock.SetTime(newTime);
+    return Ok(new { status = "updated", time = newTime });
+}
+
 
     // GET: api/Forecast
     [HttpGet]

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "GO9J3/Z7rdctSM8uHDXiPwtvmvdFqIqFcBY+tifiZkY=",
+  "Hash": "ca6AnRDMi8ldZQKR6xd828TlvF5n4hebVhK0y2lmy1w=",
   "Source": "EnergySystemAPI",
   "BasePath": "_content/EnergySystemAPI",
   "Mode": "Default",
@@ -38,12 +38,33 @@
       "OriginalItemSpec": "E:\\EnergySystem\\EnergySystemAPI\\wwwroot\\predict.html"
     },
     {
-      "Identity": "E:\\EnergySystem\\EnergySystemAPI\\obj\\Debug\\net9.0\\compressed\\qzg36l8eg0-5ipweew5fc.gz",
+      "Identity": "E:\\EnergySystem\\EnergySystemAPI\\obj\\Debug\\net9.0\\compressed\\nbxhp1ole9-5ppegayfgx.gz",
       "SourceId": "EnergySystemAPI",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\EnergySystem\\EnergySystemAPI\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/EnergySystemAPI",
-      "RelativePath": "index#[.{fingerprint=5ipweew5fc}]?.html.gz",
+      "RelativePath": "forecast#[.{fingerprint=5ppegayfgx}]?.html.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "E:\\EnergySystem\\EnergySystemAPI\\wwwroot\\forecast.html",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "he7no76kec",
+      "Integrity": "OXmXZeKZ9fdy8WCbvBb14XdpG4ygBUW4wfwy1WCn2aU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "E:\\EnergySystem\\EnergySystemAPI\\wwwroot\\forecast.html"
+    },
+    {
+      "Identity": "E:\\EnergySystem\\EnergySystemAPI\\obj\\Debug\\net9.0\\compressed\\qzg36l8eg0-nq4ua00oay.gz",
+      "SourceId": "EnergySystemAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\EnergySystem\\EnergySystemAPI\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/EnergySystemAPI",
+      "RelativePath": "index#[.{fingerprint=nq4ua00oay}]?.html.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -52,11 +73,95 @@
       "RelatedAsset": "E:\\EnergySystem\\EnergySystemAPI\\wwwroot\\index.html",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "5ipweew5fc",
-      "Integrity": "47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
+      "Fingerprint": "ulz44m9y2i",
+      "Integrity": "vsZFEMMV2VSsxxLI5XT9lQMPO6TmEtou983Z1R9IVYY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "E:\\EnergySystem\\EnergySystemAPI\\wwwroot\\index.html"
+    },
+    {
+      "Identity": "E:\\EnergySystem\\EnergySystemAPI\\obj\\Debug\\net9.0\\compressed\\t2cqfr2nds-dgn3xnvw15.gz",
+      "SourceId": "EnergySystemAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\EnergySystem\\EnergySystemAPI\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/EnergySystemAPI",
+      "RelativePath": "settings#[.{fingerprint=dgn3xnvw15}]?.html.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "E:\\EnergySystem\\EnergySystemAPI\\wwwroot\\settings.html",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "wbe36tg0gk",
+      "Integrity": "tDp+EQ1rT5qf13aeTN84reExiS+3gjgTLLaOdcYs0nI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "E:\\EnergySystem\\EnergySystemAPI\\wwwroot\\settings.html"
+    },
+    {
+      "Identity": "E:\\EnergySystem\\EnergySystemAPI\\obj\\Debug\\net9.0\\compressed\\tof8wkjoh4-pz5hgm8nf6.gz",
+      "SourceId": "EnergySystemAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\EnergySystem\\EnergySystemAPI\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/EnergySystemAPI",
+      "RelativePath": "history#[.{fingerprint=pz5hgm8nf6}]?.html.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "E:\\EnergySystem\\EnergySystemAPI\\wwwroot\\history.html",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "odwjg8n0au",
+      "Integrity": "rMqpR8Q1WHkv9cMO0lGi3eyWiLXqTfgUz8jy6kbE5KQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "E:\\EnergySystem\\EnergySystemAPI\\wwwroot\\history.html"
+    },
+    {
+      "Identity": "E:\\EnergySystem\\EnergySystemAPI\\wwwroot\\forecast.html",
+      "SourceId": "EnergySystemAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\EnergySystem\\EnergySystemAPI\\wwwroot\\",
+      "BasePath": "_content/EnergySystemAPI",
+      "RelativePath": "forecast#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "5ppegayfgx",
+      "Integrity": "mdHICUOJw6AJc0vug9ddKDTthCdVAAHK4wCp1ReWJ0g=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\forecast.html"
+    },
+    {
+      "Identity": "E:\\EnergySystem\\EnergySystemAPI\\wwwroot\\history.html",
+      "SourceId": "EnergySystemAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\EnergySystem\\EnergySystemAPI\\wwwroot\\",
+      "BasePath": "_content/EnergySystemAPI",
+      "RelativePath": "history#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "pz5hgm8nf6",
+      "Integrity": "a1/Io4T0N9PF2OKmCcPlVFllb/FlNutQihYe5LlTWxo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\history.html"
     },
     {
       "Identity": "E:\\EnergySystem\\EnergySystemAPI\\wwwroot\\index.html",
@@ -73,8 +178,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "5ipweew5fc",
-      "Integrity": "47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
+      "Fingerprint": "nq4ua00oay",
+      "Integrity": "gULiJzmXNNuwRE/RczGr/Glozg7lnOQFRzadVaJCG5U=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\index.html"
@@ -99,17 +204,38 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\predict.html"
+    },
+    {
+      "Identity": "E:\\EnergySystem\\EnergySystemAPI\\wwwroot\\settings.html",
+      "SourceId": "EnergySystemAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\EnergySystem\\EnergySystemAPI\\wwwroot\\",
+      "BasePath": "_content/EnergySystemAPI",
+      "RelativePath": "settings#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "dgn3xnvw15",
+      "Integrity": "fQYFNPSMl1Ef0H0ymFHCTE35gCq+NqjMgY3U9c3zqsU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\settings.html"
     }
   ],
   "Endpoints": [
     {
-      "Route": "index.5ipweew5fc.html",
-      "AssetFile": "E:\\EnergySystem\\EnergySystemAPI\\obj\\Debug\\net9.0\\compressed\\qzg36l8eg0-5ipweew5fc.gz",
+      "Route": "forecast.5ppegayfgx.html",
+      "AssetFile": "E:\\EnergySystem\\EnergySystemAPI\\obj\\Debug\\net9.0\\compressed\\nbxhp1ole9-5ppegayfgx.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "1.000000000000"
+          "Quality": "0.000378357927"
         }
       ],
       "ResponseHeaders": [
@@ -119,15 +245,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "0"
+          "Value": "2642"
         },
         {
           "Name": "ETag",
-          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
+          "Value": "\"OXmXZeKZ9fdy8WCbvBb14XdpG4ygBUW4wfwy1WCn2aU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Nov 2025 14:10:02 GMT"
+          "Value": "Fri, 26 Dec 2025 09:20:08 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -147,26 +273,614 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
+          "Value": "W/\"mdHICUOJw6AJc0vug9ddKDTthCdVAAHK4wCp1ReWJ0g=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "5ipweew5fc"
+          "Value": "5ppegayfgx"
         },
         {
           "Name": "label",
-          "Value": "index.html"
+          "Value": "forecast.html"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
+          "Value": "sha256-mdHICUOJw6AJc0vug9ddKDTthCdVAAHK4wCp1ReWJ0g="
         }
       ]
     },
     {
-      "Route": "index.5ipweew5fc.html",
+      "Route": "forecast.5ppegayfgx.html",
+      "AssetFile": "E:\\EnergySystem\\EnergySystemAPI\\wwwroot\\forecast.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13282"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mdHICUOJw6AJc0vug9ddKDTthCdVAAHK4wCp1ReWJ0g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 09:20:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5ppegayfgx"
+        },
+        {
+          "Name": "label",
+          "Value": "forecast.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-mdHICUOJw6AJc0vug9ddKDTthCdVAAHK4wCp1ReWJ0g="
+        }
+      ]
+    },
+    {
+      "Route": "forecast.5ppegayfgx.html.gz",
+      "AssetFile": "E:\\EnergySystem\\EnergySystemAPI\\obj\\Debug\\net9.0\\compressed\\nbxhp1ole9-5ppegayfgx.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2642"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"OXmXZeKZ9fdy8WCbvBb14XdpG4ygBUW4wfwy1WCn2aU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 09:20:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5ppegayfgx"
+        },
+        {
+          "Name": "label",
+          "Value": "forecast.html.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-OXmXZeKZ9fdy8WCbvBb14XdpG4ygBUW4wfwy1WCn2aU="
+        }
+      ]
+    },
+    {
+      "Route": "forecast.html",
+      "AssetFile": "E:\\EnergySystem\\EnergySystemAPI\\obj\\Debug\\net9.0\\compressed\\nbxhp1ole9-5ppegayfgx.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000378357927"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2642"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"OXmXZeKZ9fdy8WCbvBb14XdpG4ygBUW4wfwy1WCn2aU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 09:20:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"mdHICUOJw6AJc0vug9ddKDTthCdVAAHK4wCp1ReWJ0g=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-mdHICUOJw6AJc0vug9ddKDTthCdVAAHK4wCp1ReWJ0g="
+        }
+      ]
+    },
+    {
+      "Route": "forecast.html",
+      "AssetFile": "E:\\EnergySystem\\EnergySystemAPI\\wwwroot\\forecast.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13282"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mdHICUOJw6AJc0vug9ddKDTthCdVAAHK4wCp1ReWJ0g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 09:20:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-mdHICUOJw6AJc0vug9ddKDTthCdVAAHK4wCp1ReWJ0g="
+        }
+      ]
+    },
+    {
+      "Route": "forecast.html.gz",
+      "AssetFile": "E:\\EnergySystem\\EnergySystemAPI\\obj\\Debug\\net9.0\\compressed\\nbxhp1ole9-5ppegayfgx.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2642"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"OXmXZeKZ9fdy8WCbvBb14XdpG4ygBUW4wfwy1WCn2aU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 09:20:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-OXmXZeKZ9fdy8WCbvBb14XdpG4ygBUW4wfwy1WCn2aU="
+        }
+      ]
+    },
+    {
+      "Route": "history.html",
+      "AssetFile": "E:\\EnergySystem\\EnergySystemAPI\\obj\\Debug\\net9.0\\compressed\\tof8wkjoh4-pz5hgm8nf6.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000371609067"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2690"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rMqpR8Q1WHkv9cMO0lGi3eyWiLXqTfgUz8jy6kbE5KQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 09:19:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"a1/Io4T0N9PF2OKmCcPlVFllb/FlNutQihYe5LlTWxo=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-a1/Io4T0N9PF2OKmCcPlVFllb/FlNutQihYe5LlTWxo="
+        }
+      ]
+    },
+    {
+      "Route": "history.html",
+      "AssetFile": "E:\\EnergySystem\\EnergySystemAPI\\wwwroot\\history.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13237"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"a1/Io4T0N9PF2OKmCcPlVFllb/FlNutQihYe5LlTWxo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 09:19:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-a1/Io4T0N9PF2OKmCcPlVFllb/FlNutQihYe5LlTWxo="
+        }
+      ]
+    },
+    {
+      "Route": "history.html.gz",
+      "AssetFile": "E:\\EnergySystem\\EnergySystemAPI\\obj\\Debug\\net9.0\\compressed\\tof8wkjoh4-pz5hgm8nf6.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2690"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rMqpR8Q1WHkv9cMO0lGi3eyWiLXqTfgUz8jy6kbE5KQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 09:19:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-rMqpR8Q1WHkv9cMO0lGi3eyWiLXqTfgUz8jy6kbE5KQ="
+        }
+      ]
+    },
+    {
+      "Route": "history.pz5hgm8nf6.html",
+      "AssetFile": "E:\\EnergySystem\\EnergySystemAPI\\obj\\Debug\\net9.0\\compressed\\tof8wkjoh4-pz5hgm8nf6.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000371609067"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2690"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rMqpR8Q1WHkv9cMO0lGi3eyWiLXqTfgUz8jy6kbE5KQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 09:19:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"a1/Io4T0N9PF2OKmCcPlVFllb/FlNutQihYe5LlTWxo=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "pz5hgm8nf6"
+        },
+        {
+          "Name": "label",
+          "Value": "history.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-a1/Io4T0N9PF2OKmCcPlVFllb/FlNutQihYe5LlTWxo="
+        }
+      ]
+    },
+    {
+      "Route": "history.pz5hgm8nf6.html",
+      "AssetFile": "E:\\EnergySystem\\EnergySystemAPI\\wwwroot\\history.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13237"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"a1/Io4T0N9PF2OKmCcPlVFllb/FlNutQihYe5LlTWxo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 09:19:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "pz5hgm8nf6"
+        },
+        {
+          "Name": "label",
+          "Value": "history.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-a1/Io4T0N9PF2OKmCcPlVFllb/FlNutQihYe5LlTWxo="
+        }
+      ]
+    },
+    {
+      "Route": "history.pz5hgm8nf6.html.gz",
+      "AssetFile": "E:\\EnergySystem\\EnergySystemAPI\\obj\\Debug\\net9.0\\compressed\\tof8wkjoh4-pz5hgm8nf6.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2690"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rMqpR8Q1WHkv9cMO0lGi3eyWiLXqTfgUz8jy6kbE5KQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 09:19:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "pz5hgm8nf6"
+        },
+        {
+          "Name": "label",
+          "Value": "history.html.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-rMqpR8Q1WHkv9cMO0lGi3eyWiLXqTfgUz8jy6kbE5KQ="
+        }
+      ]
+    },
+    {
+      "Route": "index.html",
+      "AssetFile": "E:\\EnergySystem\\EnergySystemAPI\\obj\\Debug\\net9.0\\compressed\\qzg36l8eg0-nq4ua00oay.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000276625173"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3614"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vsZFEMMV2VSsxxLI5XT9lQMPO6TmEtou983Z1R9IVYY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 27 Dec 2025 11:22:10 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"gULiJzmXNNuwRE/RczGr/Glozg7lnOQFRzadVaJCG5U=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-gULiJzmXNNuwRE/RczGr/Glozg7lnOQFRzadVaJCG5U="
+        }
+      ]
+    },
+    {
+      "Route": "index.html",
       "AssetFile": "E:\\EnergySystem\\EnergySystemAPI\\wwwroot\\index.html",
       "Selectors": [],
       "ResponseHeaders": [
@@ -176,7 +890,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "0"
+          "Value": "13235"
         },
         {
           "Name": "Content-Type",
@@ -184,11 +898,156 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
+          "Value": "\"gULiJzmXNNuwRE/RczGr/Glozg7lnOQFRzadVaJCG5U=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Nov 2025 14:10:02 GMT"
+          "Value": "Sat, 27 Dec 2025 11:22:10 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-gULiJzmXNNuwRE/RczGr/Glozg7lnOQFRzadVaJCG5U="
+        }
+      ]
+    },
+    {
+      "Route": "index.html.gz",
+      "AssetFile": "E:\\EnergySystem\\EnergySystemAPI\\obj\\Debug\\net9.0\\compressed\\qzg36l8eg0-nq4ua00oay.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3614"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vsZFEMMV2VSsxxLI5XT9lQMPO6TmEtou983Z1R9IVYY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 27 Dec 2025 11:22:10 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-vsZFEMMV2VSsxxLI5XT9lQMPO6TmEtou983Z1R9IVYY="
+        }
+      ]
+    },
+    {
+      "Route": "index.nq4ua00oay.html",
+      "AssetFile": "E:\\EnergySystem\\EnergySystemAPI\\obj\\Debug\\net9.0\\compressed\\qzg36l8eg0-nq4ua00oay.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000276625173"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3614"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vsZFEMMV2VSsxxLI5XT9lQMPO6TmEtou983Z1R9IVYY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 27 Dec 2025 11:22:10 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"gULiJzmXNNuwRE/RczGr/Glozg7lnOQFRzadVaJCG5U=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "nq4ua00oay"
+        },
+        {
+          "Name": "label",
+          "Value": "index.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-gULiJzmXNNuwRE/RczGr/Glozg7lnOQFRzadVaJCG5U="
+        }
+      ]
+    },
+    {
+      "Route": "index.nq4ua00oay.html",
+      "AssetFile": "E:\\EnergySystem\\EnergySystemAPI\\wwwroot\\index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13235"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gULiJzmXNNuwRE/RczGr/Glozg7lnOQFRzadVaJCG5U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 27 Dec 2025 11:22:10 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -198,7 +1057,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "5ipweew5fc"
+          "Value": "nq4ua00oay"
         },
         {
           "Name": "label",
@@ -206,13 +1065,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
+          "Value": "sha256-gULiJzmXNNuwRE/RczGr/Glozg7lnOQFRzadVaJCG5U="
         }
       ]
     },
     {
-      "Route": "index.5ipweew5fc.html.gz",
-      "AssetFile": "E:\\EnergySystem\\EnergySystemAPI\\obj\\Debug\\net9.0\\compressed\\qzg36l8eg0-5ipweew5fc.gz",
+      "Route": "index.nq4ua00oay.html.gz",
+      "AssetFile": "E:\\EnergySystem\\EnergySystemAPI\\obj\\Debug\\net9.0\\compressed\\qzg36l8eg0-nq4ua00oay.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -221,7 +1080,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "0"
+          "Value": "3614"
         },
         {
           "Name": "Content-Type",
@@ -229,11 +1088,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
+          "Value": "\"vsZFEMMV2VSsxxLI5XT9lQMPO6TmEtou983Z1R9IVYY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Nov 2025 14:10:02 GMT"
+          "Value": "Sat, 27 Dec 2025 11:22:10 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -251,7 +1110,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "5ipweew5fc"
+          "Value": "nq4ua00oay"
         },
         {
           "Name": "label",
@@ -259,144 +1118,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
-        }
-      ]
-    },
-    {
-      "Route": "index.html",
-      "AssetFile": "E:\\EnergySystem\\EnergySystemAPI\\obj\\Debug\\net9.0\\compressed\\qzg36l8eg0-5ipweew5fc.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "1.000000000000"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "0"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 26 Nov 2025 14:10:02 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/html"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
-        }
-      ]
-    },
-    {
-      "Route": "index.html",
-      "AssetFile": "E:\\EnergySystem\\EnergySystemAPI\\wwwroot\\index.html",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "0"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/html"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 26 Nov 2025 14:10:02 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
-        }
-      ]
-    },
-    {
-      "Route": "index.html.gz",
-      "AssetFile": "E:\\EnergySystem\\EnergySystemAPI\\obj\\Debug\\net9.0\\compressed\\qzg36l8eg0-5ipweew5fc.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "0"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/html"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 26 Nov 2025 14:10:02 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
+          "Value": "sha256-vsZFEMMV2VSsxxLI5XT9lQMPO6TmEtou983Z1R9IVYY="
         }
       ]
     },
@@ -695,6 +1417,304 @@
         {
           "Name": "integrity",
           "Value": "sha256-UfYHDc+b+k9Qnah/k2SkD1O4tXw+3MwqoFZMPu3y9no="
+        }
+      ]
+    },
+    {
+      "Route": "settings.dgn3xnvw15.html",
+      "AssetFile": "E:\\EnergySystem\\EnergySystemAPI\\obj\\Debug\\net9.0\\compressed\\t2cqfr2nds-dgn3xnvw15.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000258799172"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3863"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tDp+EQ1rT5qf13aeTN84reExiS+3gjgTLLaOdcYs0nI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 09:49:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"fQYFNPSMl1Ef0H0ymFHCTE35gCq+NqjMgY3U9c3zqsU=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dgn3xnvw15"
+        },
+        {
+          "Name": "label",
+          "Value": "settings.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-fQYFNPSMl1Ef0H0ymFHCTE35gCq+NqjMgY3U9c3zqsU="
+        }
+      ]
+    },
+    {
+      "Route": "settings.dgn3xnvw15.html",
+      "AssetFile": "E:\\EnergySystem\\EnergySystemAPI\\wwwroot\\settings.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15484"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fQYFNPSMl1Ef0H0ymFHCTE35gCq+NqjMgY3U9c3zqsU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 09:49:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dgn3xnvw15"
+        },
+        {
+          "Name": "label",
+          "Value": "settings.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-fQYFNPSMl1Ef0H0ymFHCTE35gCq+NqjMgY3U9c3zqsU="
+        }
+      ]
+    },
+    {
+      "Route": "settings.dgn3xnvw15.html.gz",
+      "AssetFile": "E:\\EnergySystem\\EnergySystemAPI\\obj\\Debug\\net9.0\\compressed\\t2cqfr2nds-dgn3xnvw15.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3863"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tDp+EQ1rT5qf13aeTN84reExiS+3gjgTLLaOdcYs0nI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 09:49:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dgn3xnvw15"
+        },
+        {
+          "Name": "label",
+          "Value": "settings.html.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tDp+EQ1rT5qf13aeTN84reExiS+3gjgTLLaOdcYs0nI="
+        }
+      ]
+    },
+    {
+      "Route": "settings.html",
+      "AssetFile": "E:\\EnergySystem\\EnergySystemAPI\\obj\\Debug\\net9.0\\compressed\\t2cqfr2nds-dgn3xnvw15.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000258799172"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3863"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tDp+EQ1rT5qf13aeTN84reExiS+3gjgTLLaOdcYs0nI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 09:49:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"fQYFNPSMl1Ef0H0ymFHCTE35gCq+NqjMgY3U9c3zqsU=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-fQYFNPSMl1Ef0H0ymFHCTE35gCq+NqjMgY3U9c3zqsU="
+        }
+      ]
+    },
+    {
+      "Route": "settings.html",
+      "AssetFile": "E:\\EnergySystem\\EnergySystemAPI\\wwwroot\\settings.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15484"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fQYFNPSMl1Ef0H0ymFHCTE35gCq+NqjMgY3U9c3zqsU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 09:49:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-fQYFNPSMl1Ef0H0ymFHCTE35gCq+NqjMgY3U9c3zqsU="
+        }
+      ]
+    },
+    {
+      "Route": "settings.html.gz",
+      "AssetFile": "E:\\EnergySystem\\EnergySystemAPI\\obj\\Debug\\net9.0\\compressed\\t2cqfr2nds-dgn3xnvw15.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3863"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tDp+EQ1rT5qf13aeTN84reExiS+3gjgTLLaOdcYs0nI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 09:49:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tDp+EQ1rT5qf13aeTN84reExiS+3gjgTLLaOdcYs0nI="
         }
       ]
     }

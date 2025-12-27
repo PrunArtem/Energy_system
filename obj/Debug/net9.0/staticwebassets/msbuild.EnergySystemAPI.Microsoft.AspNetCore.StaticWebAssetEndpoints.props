@@ -1,16 +1,40 @@
 ﻿<Project>
   <ItemGroup>
-    <StaticWebAssetEndpoint Include="_content/EnergySystemAPI/index.5ipweew5fc.html">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\index.html'))</AssetFile>
+    <StaticWebAssetEndpoint Include="_content/EnergySystemAPI/forecast.5ppegayfgx.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\forecast.html'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"5ipweew5fc"},{"Name":"integrity","Value":"sha256-47DEQpj8HBSa\u002B/TImW\u002B5JCeuQeRkm5NMpJWZG3hSuFU="},{"Name":"label","Value":"_content/EnergySystemAPI/index.html"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"0"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u002247DEQpj8HBSa\u002B/TImW\u002B5JCeuQeRkm5NMpJWZG3hSuFU=\u0022"},{"Name":"Last-Modified","Value":"Wed, 26 Nov 2025 14:10:02 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"5ppegayfgx"},{"Name":"integrity","Value":"sha256-mdHICUOJw6AJc0vug9ddKDTthCdVAAHK4wCp1ReWJ0g="},{"Name":"label","Value":"_content/EnergySystemAPI/forecast.html"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"13282"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022mdHICUOJw6AJc0vug9ddKDTthCdVAAHK4wCp1ReWJ0g=\u0022"},{"Name":"Last-Modified","Value":"Fri, 26 Dec 2025 09:20:08 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/EnergySystemAPI/forecast.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\forecast.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-mdHICUOJw6AJc0vug9ddKDTthCdVAAHK4wCp1ReWJ0g="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"13282"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022mdHICUOJw6AJc0vug9ddKDTthCdVAAHK4wCp1ReWJ0g=\u0022"},{"Name":"Last-Modified","Value":"Fri, 26 Dec 2025 09:20:08 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/EnergySystemAPI/history.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\history.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-a1/Io4T0N9PF2OKmCcPlVFllb/FlNutQihYe5LlTWxo="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"13237"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022a1/Io4T0N9PF2OKmCcPlVFllb/FlNutQihYe5LlTWxo=\u0022"},{"Name":"Last-Modified","Value":"Fri, 26 Dec 2025 09:19:54 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/EnergySystemAPI/history.pz5hgm8nf6.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\history.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"pz5hgm8nf6"},{"Name":"integrity","Value":"sha256-a1/Io4T0N9PF2OKmCcPlVFllb/FlNutQihYe5LlTWxo="},{"Name":"label","Value":"_content/EnergySystemAPI/history.html"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"13237"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022a1/Io4T0N9PF2OKmCcPlVFllb/FlNutQihYe5LlTWxo=\u0022"},{"Name":"Last-Modified","Value":"Fri, 26 Dec 2025 09:19:54 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/EnergySystemAPI/index.html">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\index.html'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-47DEQpj8HBSa\u002B/TImW\u002B5JCeuQeRkm5NMpJWZG3hSuFU="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"0"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u002247DEQpj8HBSa\u002B/TImW\u002B5JCeuQeRkm5NMpJWZG3hSuFU=\u0022"},{"Name":"Last-Modified","Value":"Wed, 26 Nov 2025 14:10:02 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-gULiJzmXNNuwRE/RczGr/Glozg7lnOQFRzadVaJCG5U="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"13235"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022gULiJzmXNNuwRE/RczGr/Glozg7lnOQFRzadVaJCG5U=\u0022"},{"Name":"Last-Modified","Value":"Sat, 27 Dec 2025 11:22:10 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/EnergySystemAPI/index.nq4ua00oay.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\index.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"nq4ua00oay"},{"Name":"integrity","Value":"sha256-gULiJzmXNNuwRE/RczGr/Glozg7lnOQFRzadVaJCG5U="},{"Name":"label","Value":"_content/EnergySystemAPI/index.html"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"13235"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022gULiJzmXNNuwRE/RczGr/Glozg7lnOQFRzadVaJCG5U=\u0022"},{"Name":"Last-Modified","Value":"Sat, 27 Dec 2025 11:22:10 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/EnergySystemAPI/predict.23embezgku.html">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\predict.html'))</AssetFile>
@@ -23,6 +47,18 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-zgNuoM14w24hvZ/aoZ2hacI43mzUOcnLISFOcCEr6D8="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2533"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022zgNuoM14w24hvZ/aoZ2hacI43mzUOcnLISFOcCEr6D8=\u0022"},{"Name":"Last-Modified","Value":"Wed, 03 Dec 2025 19:50:47 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/EnergySystemAPI/settings.dgn3xnvw15.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\settings.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"dgn3xnvw15"},{"Name":"integrity","Value":"sha256-fQYFNPSMl1Ef0H0ymFHCTE35gCq\u002BNqjMgY3U9c3zqsU="},{"Name":"label","Value":"_content/EnergySystemAPI/settings.html"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"15484"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022fQYFNPSMl1Ef0H0ymFHCTE35gCq\u002BNqjMgY3U9c3zqsU=\u0022"},{"Name":"Last-Modified","Value":"Fri, 26 Dec 2025 09:49:57 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/EnergySystemAPI/settings.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\settings.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-fQYFNPSMl1Ef0H0ymFHCTE35gCq\u002BNqjMgY3U9c3zqsU="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"15484"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022fQYFNPSMl1Ef0H0ymFHCTE35gCq\u002BNqjMgY3U9c3zqsU=\u0022"},{"Name":"Last-Modified","Value":"Fri, 26 Dec 2025 09:49:57 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
   </ItemGroup>
 </Project>

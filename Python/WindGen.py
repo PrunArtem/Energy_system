@@ -1,7 +1,10 @@
 import numpy as np
 import sys
 import json
+import ast
 import pandas as pd
+import warnings
+warnings.filterwarnings("ignore", category=FutureWarning)
 
 # Таблиця характеристик
 wind_speeds = np.array([0, 1.3, 3, 5, 7, 9, 10, 11, 12, 15, 20, 25])
@@ -12,11 +15,15 @@ def vawt_power(v):
     Повертає потужність (Вт) для заданої швидкості вітру v (м/с)
     на основі апроксимованої power curve VAWT.
     """
-    return float(np.interp(v, wind_speeds, power_output))
+    v = float(v)
+    return np.interp(v, wind_speeds, power_output).item()
 
 
 raw = sys.stdin.read()
-data = json.loads(raw)
+
+raw = raw.encode("utf-8").decode("utf-8-sig").strip()
+
+data = ast.literal_eval(raw)
 
 # Convert weather
 weather = pd.DataFrame(data["weather"])
@@ -36,9 +43,9 @@ for device in data["devices"]:
     power = vawt_power(weather["wind_speed"])
 
     # Sum energy for the day (Wh)
-    energy_wh = power.sum() * 1  # якщо дані кожні 1 хвилину (залежить від частоти!)
+    energy_wh = power
 
-    total_generation_wh += energy_wh
+    total_generation_wh += ((energy_wh / 2000) * device["ratedPower"])
 
 # ---------- OUTPUT ----------
 # Output only total generation as a number

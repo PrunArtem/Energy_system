@@ -1,12 +1,18 @@
 import sys
 import json
+import ast
 import pandas as pd
 import pvlib
 from pvlib.location import Location
 
 # ---------- READ INPUT ----------
+#raw = sys.stdin.read().strip()
+#data = json.loads(raw)
 raw = sys.stdin.read()
-data = json.loads(raw)
+
+raw = raw.encode("utf-8").decode("utf-8-sig").strip()
+
+data = ast.literal_eval(raw)
 
 latitude = data["latitude"]
 longitude = data["longitude"]

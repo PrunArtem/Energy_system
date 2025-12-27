@@ -7,6 +7,7 @@ namespace EnergySystemAPI.Models
         public string Name { get; set; } = string.Empty;
         public string? Location { get; set; }
         public double? RatedPower { get; set; }
+        public DateTime CreatedAt { get; set; }
 
     }
 

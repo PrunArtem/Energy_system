@@ -1,12 +1,24 @@
 {
   "Files": [
     {
+      "Id": "E:\\EnergySystem\\EnergySystemAPI\\wwwroot\\forecast.html",
+      "PackagePath": "staticwebassets\\forecast.html"
+    },
+    {
+      "Id": "E:\\EnergySystem\\EnergySystemAPI\\wwwroot\\history.html",
+      "PackagePath": "staticwebassets\\history.html"
+    },
+    {
       "Id": "E:\\EnergySystem\\EnergySystemAPI\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },
     {
       "Id": "E:\\EnergySystem\\EnergySystemAPI\\wwwroot\\predict.html",
       "PackagePath": "staticwebassets\\predict.html"
+    },
+    {
+      "Id": "E:\\EnergySystem\\EnergySystemAPI\\wwwroot\\settings.html",
+      "PackagePath": "staticwebassets\\settings.html"
     },
     {
       "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.EnergySystemAPI.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

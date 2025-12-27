@@ -18,5 +18,8 @@ namespace EnergySystemAPI.Data
         public DbSet<MeasurementType> MeasurementTypes { get; set; }
         public DbSet<SensorData> SensorsData { get; set; }
         public DbSet<WeatherData> WeatherData { get; set; }
+        public DbSet<Setting> Settings { get; set; }
+        public DbSet<Consumption> Consumption { get; set; }
+
     }
 }
